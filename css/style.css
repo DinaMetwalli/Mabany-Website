@@ -1,0 +1,576 @@
+/* @import 'animate.css'; */
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+/*.animate__animated.animate__fadeInDown {
+  --animate-delay: 2s;
+}*/
+
+.slide-in .visbile {
+  opacity: 1;
+  top: 0;
+}
+
+.animation-fadeUp, .animation-fadeDown {opacity: 0;}
+
+
+.animation-fadeUp .visible, .animation-fadeDown .visible{
+  opacity: 1;
+  top: 0;
+}
+  
+body {
+  margin: 0;
+  font-family: noto serif;
+}
+  
+button {
+  max-width: 100px;
+  max-height: 65px;
+  width: 10vw;
+  height: 6vw;
+  background-color: #2e2e2e;
+  transition: background-color 1s;
+  color: #fff;
+  border-radius: 0;
+  border: none;
+  margin-left: 6vw;
+  cursor: pointer;
+  font-size: 1.2vw;
+}
+
+button:hover {
+  background-color: #787878;
+}
+
+h2 {
+  white-space: pre;
+}
+
+li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  text-align: center;
+  word-wrap: normal;
+}
+
+li:hover {
+  background-color: #bfbfbf;
+  transition: 0.4s;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+#title {font-size: 5vw !important;}
+
+#title2 {font-size: 4vw !important;}
+
+/***********************************************************
+
+ Using Media Queries to make image and text size responsive.
+
+***********************************************************/
+
+/* If the screen size is 1200px wide or more, set the font-size to 24px */
+@media (min-width: 1200px) {
+  h3 {font-size: 24px;}
+  h2 {font-size: 28px;}
+  h1 {font-size: 38px;}
+  .image-size {
+    max-height: 800px;
+    min-height: 601px;
+    /*max and min height are added to image sizing to avoid white-space when re-scaling screen.*/
+  }
+  .map-size {
+    height: 350px;
+    width: 500px;
+  }
+  .dropdown-menu {
+    width: 30vw;
+    z-index: 1;
+    text-align: center;
+    margin-top: 30px !important;
+  }
+  .menu::after {
+    content: "Menu";
+  }
+  .font-text {font-size: 16px;}
+  .info a {font-size: 30px;}
+  span, p {font-size: 15px !important;}
+  
+}
+
+/* If the screen size is smaller than 1200px, set the font-size to 20px */
+@media (max-width: 1199.98px) {
+  h3 {font-size: 20px;}
+  h2 {font-size: 24px;}
+  h1 {font-size: 34px;}
+  .image-size {
+    max-height: 600px;
+    min-height: 501px;
+  }
+  .map-size {
+    height: 250px;
+    width: 400px;
+  }
+  .dropdown-menu {
+    width: 30vw;
+    z-index: 1;
+    text-align: center;
+    margin-top: 30px !important;
+  }
+  .menu::after {
+    content: "Menu";
+  }
+  .font-text {font-size: 14px;}
+  .info a {font-size: 19px;}
+  span, p {font-size: 14px !important;}
+}
+
+@media (max-width: 768px) {
+  h3 {font-size: 16px;}
+  h2 {font-size: 20px;}
+  h1 {font-size: 30px;}
+  .image-size {
+    max-height: 500px;
+    min-height: 301px;
+  }
+  .map-size {
+    height: 200px;
+    width: 350px;
+  }
+  .dropdown-menu {
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    margin-top: 30px !important;
+  }
+  .font-text {font-size: 12px;}
+  .info a {font-size: 24px;}
+  span, p {font-size: 12px !important;}
+}
+
+@media (max-width: 576px) {
+  h3 {font-size: 12px;}
+  h2 {font-size: 16px;}
+  h1 {font-size: 22px;}
+  .image-size {
+    max-height: 300px;
+    min-height: 201px;
+  }
+  .map-size {
+    height: 200px;
+    width: 300px;
+  }
+  .dropdown-menu {
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    margin-top: 30px !important;
+  }
+  .font-text {font-size: 8px;}
+  .info a {font-size: 20px;}
+  span, p {font-size: 10px !important;}
+}
+
+@media (max-width: 392px) {
+  h3 {font-size: 9px;}
+  h2 {font-size: 12px;}
+  h1 {font-size: 18px;}
+  .image-size {
+    height: 200px;
+  }
+  .map-size {
+    height: 150px;
+    width: 200px;
+  }
+  .dropdown-menu {
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    margin-top: 30px !important;
+  }
+  .font-text {font-size: 8px;}
+  .info a {font-size: 16px;}
+  span, p {font-size: 8px !important;}
+}
+
+.carousel-item {
+  transition: transform 2.6s ease-in-out;
+}
+
+.carousel-fade .active.carousel-item-start,
+.carousel-fade .active.carousel-item-end {
+  transition: opacity 0s 2.6s;
+}
+
+.over-text {
+  position: relative;
+}
+
+.plus::after {
+  content: "+";
+}
+.centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image-text {
+  position: absolute;
+  left: 0;
+  top: 10%;
+  right: 0;
+  text-align: left;
+  padding-left: 12%;
+  color: #fff;
+}
+
+.image-text h1 {
+  font-size: 3.2vw;
+  font-weight: bold;
+  margin-bottom: 2vw;
+}
+
+.image-text p {
+  font-size: 1vw;
+}
+
+.text-line {
+  padding-bottom: 20px;
+  margin-right: 200px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  color: white;
+}
+
+.line {
+  text-decoration: none;
+  position: relative;
+  font-size: 2vw;
+}
+
+.line::after {
+  content: '';
+  color: #32ccff;
+  width: 3vw;
+  position: absolute;
+  bottom: 1vw;
+  margin-left: 5px;
+  border-width: 0 0 1.3px 0;
+  border-style: solid;
+}
+
+.block {
+  position: absolute;
+  background-color: #f2f2f2;
+  bottom: 0;
+  right: 0;
+  padding: 3vw 16vw 0 2vw;
+  text-align: left;
+}
+
+.info {
+  position: absolute;
+  background-color: #f2f2f2;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: left;
+}
+
+.info a {
+  text-decoration: none;
+  color: black;
+}
+
+.more {
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  right: 0;
+  align-items: center;
+  top: -80px;
+  text-align: center;
+  padding:20px;
+  font-size: 25px;
+  background-color: #FFF;
+}
+
+/*In above three classes (.block, .info, .more) position relative is for background image 
+(last div) while position absolute makes the text block overlay it (in .block the bottom 
+and right properties are used to overlap it at the bottom right of the image).*/
+
+.about-us {
+  padding: 50px 50px 0 60px;
+}
+
+.text-style{ 
+  word-break: normal;
+}
+
+.dropdown-item {
+  padding: 20px;
+}
+
+.dropdown {
+  position: static;
+  display: inline-block;
+}
+
+.dropdown-content-menu {
+  height: 0px;
+  padding-top: 3vw;
+  overflow: hidden;
+  position: absolute;
+  min-width: 100%;
+  transition:.6s;
+  z-index: 1;
+  right: 0;
+}
+
+.dropdown-content {
+  height: 0px;
+  padding-top: 3vw;
+  overflow: hidden;
+  position: absolute;
+  min-width: 5vw;
+  transition:.6s;
+  z-index: 1;
+}
+
+.dropdown-content a, .dropdown-content-menu a{
+  color: black;
+}
+
+.dropdown:hover .dropdown-content, .dropdown:hover .dropdown-content-menu {
+  display: block;
+  height: 100vh;
+}
+
+.item {
+  background-color: #f2f2f2;
+  overflow: hidden;
+  height: fit-content;
+  max-height: 22vw;
+  padding: 40px;
+  margin-top: 2vw;
+  transition: max-height 2.5s, background-color 2s;
+}
+
+.item > .hidden-text {
+  margin-top: -14px;
+  color: transparent;
+}
+
+.item:hover > .hidden-text {
+  color: #000;
+  transition: 2s;
+  transition-delay: 500ms;
+}
+
+.item:hover {
+  background-color: #32ccff;
+  max-height: 50vw;
+}
+
+
+.item span {
+  font-size: 1.5vw;
+}
+
+.item h3 {
+  font-weight: bold;
+  margin-bottom: 1.7vw;
+}
+
+.underline {
+  padding-bottom: 20px;
+  margin-right: 150px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  color: #a8a8a8;
+}
+
+.image-grid {
+  background: #f2f2f2;
+}
+.image-grid img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  transition: height 1s, width 1s, padding 1s;
+}
+
+.image-grid img:hover {
+  height: 97%;
+  width: 97%;
+  padding: 10px 0px 10px 10px;
+}
+
+.panel{
+  margin: auto;
+  transition: background-color 0.4s;  
+}
+
+.panel:hover {
+  background-color: #32ccff;
+}
+.panel div .more {
+  transition: background-color 0.4s;
+}
+.panel div:hover .more {
+  background-color: #32ccff;
+}
+
+.layout img {
+  height: 90%;
+  width: 90%;
+  transition: height 1s, width 1s, padding-right 1s;
+}
+
+.layout img:hover {
+  height: 100%;
+  width: 100%;
+  padding-right: 1vw;
+}
+
+.events {
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: left;
+}
+
+.events a {
+  font-size: 1.6vw;
+  white-space: pre;
+  margin-top: 30px;
+}
+
+.mid-block {
+  color:#32ccff;
+}
+
+.layout div:hover .mid-block {
+  color: #000;
+  transition: 2s;
+}
+
+.color-block {
+  position: absolute;
+  height: fit-content;
+  width: 0px;
+  background-color: #32ccff;
+  top: 0;
+}
+
+.layout div .color-block {
+  transition: width 2s;
+}
+
+.layout div:hover .color-block {
+  width: 97%;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.contact img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.contact p, .contact b {
+  padding: 0 50px 0 50px;
+}
+
+.contact-text {
+  position: absolute;
+  top:20px;
+  bottom: 0;
+  text-align: left;
+}
+
+.link {
+  text-decoration: none;
+  color: #000;
+}
+
+/*======================================================================*/
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-container-row {
+  display: flex;
+  flex-direction: row;
+  height: 2vw;
+  width: fit-content;
+}
+
+.flex-container-row i{
+  height: 100%;
+  width: 100%;
+  padding-right: 15px;
+  text-decoration: none;
+  color: #000;
+}
+
+.flex-item {
+  font-size: 40px;
+  padding: 15px 15px 0 15px;
+}
+
+.flex-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+
+.carousel-style img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+::-webkit-input-placeholder {
+  font-size: smaller;
+}
+
+.image-over-text {
+  position: absolute;
+  left: 0;
+  top: 20%;
+  right: 0;
+  text-align: left;
+  color: #fff;
+}
+
+.facts {
+  padding-bottom: 20px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  width: 15vw;
+  color: white;
+}
