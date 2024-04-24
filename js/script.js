@@ -9,26 +9,13 @@ function isScrolledIntoView(elem) {
 }
 
 $(document).ready(function () {
-    
+
     $('.value').on('appear', function () {
         // this element is now inside browser viewport
         console.log('dfssffddfs');
     });
 
 })
-/*
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
-*/
-
-//console.log('sfewefweffwf',isInViewport('.image-text'));
 
 $(window).scroll(function () {
     $('.animation-fadeUp').each(function () {
@@ -41,11 +28,7 @@ $(window).scroll(function () {
             $(this).addClass('animate__animated animate__fadeInUp');
         }
     });
-    /*$('.animation-fadeDown').each(function () {
-        if (isScrolledIntoView(this) === true) {
-            $(this).addClass('animate__animated animate__fadeInDown');
-        }
-    });*/
+
     $('.slide-in').each(function () {
         if (isScrolledIntoView(this) === true) {
             $(this).addClass('animate__animated animate__slideInLeft');
@@ -53,8 +36,6 @@ $(window).scroll(function () {
     });
 
 });
-
-//===================================================
 
 var count = document.getElementsByClassName("count");
 var inc = [];
